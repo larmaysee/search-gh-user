@@ -67,62 +67,6 @@ const OpenIssues = ({ owner, repository, resetSelectedRepo }: IssueProps) => {
     },
   });
 
-  // const fetchIssues = (next?: string) => {
-  //   fetchMore({
-  //     variables: {
-  //       owner,
-  //       name: repository.name,
-  //       first: 10,
-  //       last: undefined,
-  //       after: next,
-  //       before: undefined,
-  //       state: ["OPEN"],
-  //     },
-  //   }).then((fetchMoreResult) => {
-  //     console.log("fetchMoreResult", fetchMoreResult);
-  //     const { edges, pageInfo } = fetchMoreResult.data.user.repositories;
-
-  //     setIssues(edges);
-  //     setEndCursor(pageInfo.endCursor);
-  //     setStartCursor(pageInfo.startCursor);
-  //     setHasNextPage(pageInfo.hasNextPage);
-  //     setHasPrevious(pageInfo.hasPreviousPage);
-  //   });
-  // };
-
-  // const fetchPreviousIssues = (previous: string) => {
-  //   console.log("previous", previous);
-
-  //   fetchMore({
-  //     variables: {
-  //       owner,
-  //       name: repository.name,
-  //       last: 10,
-  //       first: undefined,
-  //       after: undefined,
-  //       before: previous,
-  //       state: ["OPEN"],
-  //     },
-  //   }).then((fetchMoreResult) => {
-  //     console.log("fetchMoreResult", fetchMoreResult);
-  //     const { edges, pageInfo } = fetchMoreResult.data.user.repositories;
-
-  //     setIssues(edges);
-  //     setEndCursor(pageInfo.endCursor);
-  //     setStartCursor(pageInfo.startCursor);
-  //     setHasNextPage(pageInfo.hasNextPage);
-  //     setHasPrevious(pageInfo.hasPreviousPage);
-  //   });
-  // };
-
-  // const refetchIssues = async () => {
-  //   const { data } = await refetch();
-  //   setIssues(data.repository.issues.nodes);
-  //   setTotalCount(data.repository.issues.totalCount);
-  //   setEndCursor(data.repository.issues.pageInfo.endCursor);
-  //   setHasNextPage(data.repository.issues.pageInfo.hasNextPage);
-  // };
-
   const handleFetchIssue = useCallback(
     (next: "next" | "previous") => {
       fetchMore({

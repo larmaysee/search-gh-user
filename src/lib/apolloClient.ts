@@ -1,10 +1,11 @@
 // src/apolloClient.ts
+import config from "@/config/app-config";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: `${import.meta.env.VITE_GITHUB_URL}`,
+  uri: `${config.githubUrl}`,
   headers: {
-    Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`, // Token from environment variables
+    Authorization: `Bearer ${config.githubToken}`, // Token from environment variables
   },
   cache: new InMemoryCache(),
 });

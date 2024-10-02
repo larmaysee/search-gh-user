@@ -95,56 +95,6 @@ const RepositoryList = ({ login, setSelectedRepo }: RepositoryListProps) => {
     [fetchMore, login, pagination.endCursor, pagination.startCursor]
   );
 
-  // const fetchRepositories = (next?: string) => {
-  //   fetchMore({
-  //     variables: {
-  //       login,
-  //       first: 10,
-  //       last: undefined,
-  //       after: next,
-  //       before: undefined,
-  //     },
-  //   }).then((fetchMoreResult) => {
-  //     console.log("fetchMoreResult", fetchMoreResult);
-  //     const { edges, pageInfo } = fetchMoreResult.data.user.repositories;
-
-  //     setRepositories(edges);
-  //     setEndCursor(pageInfo.endCursor);
-  //     setStartCursor(pageInfo.startCursor);
-  //     setHasNextPage(pageInfo.hasNextPage);
-  //     setHasPrevious(pageInfo.hasPreviousPage);
-
-  //     updateSearchParam("after", pageInfo.endCursor);
-  //     updateSearchParam("before", "");
-  //   });
-  // };
-
-  // const fetchPreviousRepositories = (previous: string) => {
-  //   console.log("previous", previous);
-
-  //   fetchMore({
-  //     variables: {
-  //       login,
-  //       last: 10,
-  //       first: undefined,
-  //       after: undefined,
-  //       before: previous,
-  //     },
-  //   }).then((fetchMoreResult) => {
-  //     console.log("fetchMoreResult", fetchMoreResult);
-  //     const { edges, pageInfo } = fetchMoreResult.data.user.repositories;
-
-  //     setRepositories(edges);
-  //     setEndCursor(pageInfo.endCursor);
-  //     setStartCursor(pageInfo.startCursor);
-  //     setHasNextPage(pageInfo.hasNextPage);
-  //     setHasPrevious(pageInfo.hasPreviousPage);
-
-  //     updateSearchParam("before", pageInfo.startCursor);
-  //     updateSearchParam("after", "");
-  //   });
-  // };
-
   const handleSelectRepo = (repo: Repository) => {
     setSelectedRepo(repo);
   };
